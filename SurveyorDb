@@ -1,0 +1,6 @@
+CREATE TABLE Surveyor (
+  SurveyId int PRIMARY KEY,
+  FirstName varchar(50) NOT NULL,
+  LastName varchar(50) NOT NULL,
+  EstimatedLimit int NOT NULL
+);
