@@ -1,0 +1,12 @@
+CREATE TABLE ClaimDetails (
+  ClaimId varchar(10) PRIMARY KEY,
+  PolicyNo varchar(7) REFERENCES Policy(PolicyNo),
+  EstimatedLoss int CHECK (EstimatedLoss >= 0),
+  DateOfAccident date CHECK (DateOfAccident <= CURRENT_DATE),
+  ClaimStatus boolean,
+  SurveyId int REFERENCES Surveyor(SurveyId),
+  AmtApprovedbySurveyor int CHECK (AmtApprovedbySurveyor >= 0),
+  InsuranceCompanyApproval boolean DEFAULT false,
+  WithdrawClaim boolean DEFAULT false,
+  SurveyorFees int
+);
