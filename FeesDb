@@ -3,5 +3,5 @@ CREATE TABLE Fees (
   EstimateStartLimit INT not null,
   EstimateEndLimit INT not null,
   Fees INT not null,
-  CONSTRAINT s CHECK (EstimateStartLimit < EstimateEndLimit AND EstimateStartLimit >= 0)
+  CONSTRAINT chk CHECK (EstimateStartLimit < EstimateEndLimit AND EstimateStartLimit >= 0)
 );
