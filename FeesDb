@@ -1,6 +1,7 @@
 CREATE TABLE Fees (
   FeeId INT PRIMARY KEY,
-  EstimateStartLimit INT CHECK(EstimateStartLimit < EstimateEndLimit AND EstimateStartLimit >= 0),
-  EstimateEndLimit INT CHECK(EstimateEndLimit >= 0),
-  Fees INT
+  EstimateStartLimit INT not null,
+  EstimateEndLimit INT not null,
+  Fees INT not null,
+  CONSTRAINT s CHECK (EstimateStartLimit < EstimateEndLimit AND EstimateStartLimit >= 0)
 );
